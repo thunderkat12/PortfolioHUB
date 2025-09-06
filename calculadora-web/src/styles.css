@@ -1,0 +1,94 @@
+/*
+  Estilos simples e responsivos para a Calculadora Web
+  - Layout centralizado com máximo de 480px
+  - Tipografia legível
+  - Feedback visual para erros e resultados
+*/
+
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --primary: #06b6d4;
+  --error: #ef4444;
+  --success: #22c55e;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background: radial-gradient(1200px 800px at 10% 10%, #0b1023 0%, var(--bg) 50%, #0b1023 100%);
+  color: var(--text);
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.container {
+  width: 95%;
+  max-width: 480px;
+  margin: 6vh auto 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  margin: 0 0 16px 0;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+}
+
+.field { margin-bottom: 14px; }
+.field label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+.field input, .field select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--panel);
+  color: var(--text);
+  outline: none;
+}
+.field input:focus, .field select:focus {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #0891b2, var(--primary));
+  color: #001018;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-primary:active { filter: brightness(0.95); }
+
+.msg { min-height: 24px; }
+.msg.error { color: var(--error); font-weight: 600; }
+.msg.result { color: var(--success); font-weight: 700; }
+
+.footer {
+  text-align: center;
+  padding: 18px 10px 28px;
+  color: var(--muted);
+}
+
+@media (min-width: 600px) {
+  .container { padding: 28px; }
+}
+
