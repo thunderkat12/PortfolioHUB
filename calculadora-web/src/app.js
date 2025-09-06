@@ -1,6 +1,8 @@
+﻿console.log("app.js carregado");
+
 const $ = (id) => document.getElementById(id);
 
-$("calc").addEventListener("click", () => {
+function calcular() {
   const a = $("a").value.trim();
   const b = $("b").value.trim();
   const op = $("op").value;
@@ -26,12 +28,12 @@ $("calc").addEventListener("click", () => {
     return;
   }
 
-  const calc = {
-    "+": (p, q) => p + q,
-    "-": (p, q) => p - q,
-    "*": (p, q) => p * q,
-    "/": (p, q) => p / q,
-  }[op](x, y);
+  const ops = { "+": (p,q)=>p+q, "-": (p,q)=>p-q, "*": (p,q)=>p*q, "/": (p,q)=>p/q };
+  const out = ops[op](x, y);
+  res.textContent = `Resultado: ${out}`;
+}
 
-  res.textContent = `Resultado: ${calc}`;
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = $("calc");
+  if (btn) btn.addEventListener("click", calcular);
 });

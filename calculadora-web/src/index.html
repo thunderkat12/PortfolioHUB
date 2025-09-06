@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculadora Web</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <h1>Calculadora</h1>
+
+    <div class="row">
+      <input id="a" type="number" placeholder="Primeiro número" />
+      <select id="op" aria-label="Operação">
+        <option value="+">+</option>
+        <option value="-">−</option>
+        <option value="*">×</option>
+        <option value="/">÷</option>
+      </select>
+      <input id="b" type="number" placeholder="Segundo número" />
+    </div>
+
+    <button id="calc">Calcular</button>
+    <p id="msg" class="msg" role="alert"></p>
+    <p id="res" class="res"></p>
+  </main>
+</body>
+</html>
