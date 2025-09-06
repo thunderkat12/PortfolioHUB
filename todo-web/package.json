@@ -1,0 +1,13 @@
+{
+  "name": "todo-web",
+  "version": "1.0.0",
+  "description": "To-Do Web App (Node + Express + UI) com persistência em JSON",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
