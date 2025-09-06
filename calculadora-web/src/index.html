@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Web</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Calculadora Web</h1>
+
+      <!-- Formulário simples com 2 inputs numéricos, select de operação e botão -->
+      <form id="calc-form" novalidate>
+        <div class="field">
+          <label for="num1">Número 1</label>
+          <input id="num1" name="num1" type="number" inputmode="decimal" placeholder="Ex: 10" required />
+        </div>
+
+        <div class="field">
+          <label for="operation">Operação</label>
+          <select id="operation" name="operation" required>
+            <option value="+">Somar (+)</option>
+            <option value="-">Subtrair (-)</option>
+            <option value="*">Multiplicar (*)</option>
+            <option value="/">Dividir (/)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="num2">Número 2</label>
+          <input id="num2" name="num2" type="number" inputmode="decimal" placeholder="Ex: 2" required />
+        </div>
+
+        <button id="calculateBtn" type="submit" class="btn-primary">Calcular</button>
+      </form>
+
+      <!-- Áreas de feedback -->
+      <p id="error" class="msg error" role="alert" aria-live="polite"></p>
+      <p id="result" class="msg result" aria-live="polite"></p>
+    </main>
+
+    <footer class="footer">Feito com ❤️ para estudos</footer>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
+
