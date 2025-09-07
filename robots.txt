@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Atualize a URL do seu site abaixo
-Sitemap: https://thunderkat12.github.io/sitemap.txt
+Sitemap: https://thunderkat12.github.io/PortfolioHUB/sitemap.txt

@@ -28,6 +28,22 @@
     }
   }
 
+  function rewriteAbsoluteLinks(scope) {
+    const rootRel = (base || '.').replace(/\/$/, '');
+    scope.querySelectorAll('a[href^="/"]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href) return;
+      const clean = href.replace(/^\//, '');
+      a.setAttribute('href', `${rootRel}/${clean}`);
+    });
+    // Also adjust icons/images in components if any
+    scope.querySelectorAll('img[src^="/"]').forEach(img => {
+      const src = img.getAttribute('src');
+      const clean = src.replace(/^\//, '');
+      img.setAttribute('src', `${rootRel}/${clean}`);
+    });
+  }
+
   function markActiveNav() {
     const here = location.pathname.replace(/\/index\.html$/, '/');
     const nav = document.getElementById('site-nav');
@@ -72,8 +88,11 @@
   (async () => {
     await inject('app-header', `${base}/components/header.html`);
     await inject('app-footer', `${base}/components/footer.html`);
+    const header = document.getElementById('app-header');
+    const footer = document.getElementById('app-footer');
+    if (header) rewriteAbsoluteLinks(header);
+    if (footer) rewriteAbsoluteLinks(footer);
     markActiveNav();
     wireHeaderInteractions();
   })();
 })();
-
