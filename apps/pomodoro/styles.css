@@ -1,0 +1,7 @@
+/* Simple layout for Pomodoro */
+.pomodoro { display: grid; gap: 16px; justify-items: center; }
+.timer { display: grid; justify-items: center; gap: 6px; padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); width: min(360px, 100%); }
+.time { font-size: 3rem; font-variant-numeric: tabular-nums; }
+.mode { color: var(--muted); }
+.controls { display: flex; gap: 10px; }
+

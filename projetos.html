@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projetos | Daniel</title>
+    <meta name="description" content="Projetos com n8n, Supabase, TalkToMe, Python e integrações." />
+    <link rel="canonical" href="https://thunderkat12.github.io/projetos.html" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Projetos | Daniel" />
+    <meta property="og:description" content="Grade responsiva com filtros por tags." />
+    <meta property="og:url" content="https://thunderkat12.github.io/projetos.html" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main id="main" class="container section">
+      <header class="section">
+        <h1>Projetos</h1>
+        <p class="muted">Filtre por tecnologias e áreas.</p>
+      </header>
+
+      <div class="filters" role="tablist" aria-label="Filtros de projetos">
+        <button class="active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+        <button data-filter="n8n" role="tab" aria-selected="false">n8n</button>
+        <button data-filter="supabase" role="tab" aria-selected="false">Supabase</button>
+        <button data-filter="talktome" role="tab" aria-selected="false">TalkToMe</button>
+        <button data-filter="python" role="tab" aria-selected="false">Python</button>
+        <button data-filter="ia" role="tab" aria-selected="false">IA</button>
+      </div>
+
+      <section class="cards" id="projects" aria-live="polite">
+        <article class="card" data-tags="n8n ia apis">
+          <h3>ExplorerNet</h3>
+          <p>Automação e coleta inteligente com IA.</p>
+          <div class="tags"><span class="tag">n8n</span><span class="tag">IA</span></div>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver Mais</a>
+            <a class="btn" href="#">Repositório</a>
+          </div>
+        </article>
+        <article class="card" data-tags="n8n supabase">
+          <h3>Hi-Tech OS</h3>
+          <p>Orquestração de integrações e alertas.</p>
+          <div class="tags"><span class="tag">n8n</span><span class="tag">Supabase</span></div>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver Mais</a>
+            <a class="btn" href="#">Repositório</a>
+          </div>
+        </article>
+        <article class="card" data-tags="talktome python">
+          <h3>Fabiano Acessórios</h3>
+          <p>Catálogo com automação de vendas.</p>
+          <div class="tags"><span class="tag">TalkToMe</span><span class="tag">Python</span></div>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver Mais</a>
+            <a class="btn" href="#">Repositório</a>
+          </div>
+        </article>
+        <article class="card" data-tags="python supabase">
+          <h3>ETL Operacional</h3>
+          <p>Pipelines de dados com monitoramento.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Supabase</span></div>
+          <div class="actions">
+            <a class="btn primary" href="#">Ver Mais</a>
+            <a class="btn" href="#">Repositório</a>
+          </div>
+        </article>
+      </section>
+    </main>
+    <div id="app-footer"></div>
+
+    <script src="/components/components-loader.js" data-root="."></script>
+    <script>
+      const filterBtns = document.querySelectorAll('.filters button');
+      const cards = document.querySelectorAll('#projects .card');
+
+      function applyFilter(tag) {
+        cards.forEach(card => {
+          const tags = (card.dataset.tags || '').split(/\s+/);
+          const show = tag === 'all' || tags.includes(tag);
+          card.style.display = show ? '' : 'none';
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          applyFilter(btn.dataset.filter);
+        });
+      });
+    </script>
+  </body>
+  </html>

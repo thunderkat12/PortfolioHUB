@@ -1,0 +1,7 @@
+/* Tabs/panels simple styling */
+.tabs { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.tabs button { border: 1px solid var(--border); background: var(--card); color: var(--text); padding: 6px 10px; border-radius: 999px; }
+.tabs button.active { background: rgba(37, 99, 235, .15); border-color: #60a5fa; }
+.panel .row { display: grid; gap: 12px; grid-template-columns: 1fr; }
+@media (min-width: 480px) { .panel .row { grid-template-columns: 1fr 1fr; } }
+

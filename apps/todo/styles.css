@@ -1,0 +1,10 @@
+/* Scoped enhancements for To-Do */
+.todo { display: grid; gap: 14px; }
+.todo-form { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.todo-controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.todo-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.todo-item { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 10px 12px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); }
+.todo-item.completed .title { text-decoration: line-through; color: var(--muted); }
+.todo-item button { border-radius: 8px; border: 1px solid var(--border); background: transparent; color: var(--text); padding: 6px 8px; }
+.todo-empty { text-align: center; color: var(--muted); padding: 16px; border: 1px dashed var(--border); border-radius: var(--radius); }
+

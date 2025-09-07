@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversor | Apps</title>
+    <meta name="description" content="Conversor de Moeda, Temperatura e Medidas com feedback instantâneo." />
+    <link rel="canonical" href="https://thunderkat12.github.io/apps/conversor/" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main id="main" class="container section">
+      <header class="section">
+        <h1>Conversor</h1>
+        <p class="muted">Moeda (BRL↔USD), Temperatura (°C↔°F), Medidas (m↔km)</p>
+      </header>
+
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" class="active" data-tab="moeda">Moeda</button>
+        <button role="tab" aria-selected="false" data-tab="temp">Temperatura</button>
+        <button role="tab" aria-selected="false" data-tab="medida">Medidas</button>
+      </div>
+
+      <section id="tab-moeda" class="panel">
+        <form class="row">
+          <div>
+            <label for="brl">BRL</label>
+            <input id="brl" type="number" inputmode="decimal" placeholder="0,00" />
+          </div>
+          <div>
+            <label for="usd">USD</label>
+            <input id="usd" type="number" inputmode="decimal" placeholder="0.00" />
+            <p class="help">Taxa fixa: 1 USD = 5.00 BRL (exemplo)</p>
+          </div>
+        </form>
+      </section>
+
+      <section id="tab-temp" class="panel" hidden>
+        <form class="row">
+          <div>
+            <label for="celsius">°C</label>
+            <input id="celsius" type="number" inputmode="decimal" placeholder="0" />
+          </div>
+          <div>
+            <label for="fahrenheit">°F</label>
+            <input id="fahrenheit" type="number" inputmode="decimal" placeholder="32" />
+          </div>
+        </form>
+      </section>
+
+      <section id="tab-medida" class="panel" hidden>
+        <form class="row">
+          <div>
+            <label for="m">Metros</label>
+            <input id="m" type="number" inputmode="decimal" placeholder="0" />
+          </div>
+          <div>
+            <label for="km">Quilômetros</label>
+            <input id="km" type="number" inputmode="decimal" placeholder="0" />
+          </div>
+        </form>
+      </section>
+    </main>
+    <div id="app-footer"></div>
+    <script src="/components/components-loader.js" data-root="../.."></script>
+    <script src="./app.js"></script>
+  </body>
+  </html>

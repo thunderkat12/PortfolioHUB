@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To-Do | Apps</title>
+    <meta name="description" content="Gerencie suas tarefas: adicionar, concluir, remover e filtrar." />
+    <link rel="canonical" href="https://thunderkat12.github.io/apps/todo/" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main id="main" class="container section">
+      <header class="section">
+        <h1>To-Do</h1>
+        <p class="muted">Tarefas com filtros e persistência local.</p>
+      </header>
+
+      <section class="todo">
+        <form id="todo-form" class="todo-form" autocomplete="off">
+          <label class="visually-hidden" for="todo-input">Nova tarefa</label>
+          <input id="todo-input" name="todo" type="text" placeholder="O que precisa ser feito?" required />
+          <button class="btn primary" type="submit">Adicionar</button>
+        </form>
+
+        <div class="todo-controls">
+          <div class="filters" role="tablist">
+            <button data-filter="all" class="active" aria-selected="true">Todas</button>
+            <button data-filter="active" aria-selected="false">Ativas</button>
+            <button data-filter="completed" aria-selected="false">Concluídas</button>
+          </div>
+          <div class="count" aria-live="polite"></div>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+      </section>
+    </main>
+    <div id="app-footer"></div>
+    <script src="/components/components-loader.js" data-root="../.."></script>
+    <script src="./app.js"></script>
+  </body>
+  </html>

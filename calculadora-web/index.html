@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora Web</title>
+    <meta name="description" content="Calculadora responsiva com validações e acessibilidade." />
+    <link rel="canonical" href="https://thunderkat12.github.io/calculadora-web/" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/calculadora-web/src/styles.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+    <main id="main" class="container">
+      <h1>Calculadora Web</h1>
+      <form id="calc-form" novalidate>
+        <div class="field">
+          <label for="num1">Número 1</label>
+          <input id="num1" name="num1" type="number" inputmode="decimal" placeholder="Ex: 10" required />
+        </div>
+        <div class="field">
+          <label for="operation">Operação</label>
+          <select id="operation" name="operation" required>
+            <option value="+">Somar (+)</option>
+            <option value="-">Subtrair (-)</option>
+            <option value="*">Multiplicar (*)</option>
+            <option value="/">Dividir (/)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="num2">Número 2</label>
+          <input id="num2" name="num2" type="number" inputmode="decimal" placeholder="Ex: 2" required />
+        </div>
+        <button id="calculateBtn" type="submit" class="btn-primary">Calcular</button>
+      </form>
+      <p id="error" class="msg error" role="alert" aria-live="polite"></p>
+      <p id="result" class="msg result" aria-live="polite"></p>
+    </main>
+    <div id="app-footer"></div>
+    <script src="/components/components-loader.js" data-root=".."></script>
+    <script src="/calculadora-web/src/main.js"></script>
+  </body>
+  </html>
