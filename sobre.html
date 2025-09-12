@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
@@ -16,14 +16,43 @@
   <body>
     <div id="app-header"></div>
     <main id="main" class="container section">
-      <header class="section">
-        <h1>Sobre</h1>
-        <p class="muted">Resumo profissional, missão, stack e experiências.</p>
-      </header>
+      <section class="hero">
+        <div class="inner">
+          <div class="media">
+            <img src="assets/images/profile.png" alt="Foto de Daniel" loading="lazy" width="320" height="320" />
+          </div>
+          <div class="copy">
+            <h1>Sobre</h1>
+            <p class="muted">Automações low/no-code, IA e integrações. Foco em eficiência, dados e experiência.</p>
+            <div class="actions">
+              <a class="btn" href="Portifolio.pdf" target="_blank" rel="noopener">Baixar Portfólio (PDF)</a>
+              <a class="btn primary" href="contato.html">Falar comigo</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="section" aria-labelledby="resumo-title">
-        <h2 id="resumo-title">Resumo</h2>
-        <p>Sou especialista em automações low/no-code com <strong>n8n</strong>, <strong>IA</strong> e integrações. Entrego soluções escaláveis com foco em dados, performance e experiência, conectando plataformas como <strong>Supabase</strong>, <strong>Salesforce</strong> e <strong>TalkToMe</strong>.</p>
+      <section class="section" aria-labelledby="perfil-title">
+        <h2 id="perfil-title">Perfil</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Resumo Profissional</h3>
+            <p>Sou especialista em automações low/no-code com <strong>n8n</strong>, <strong>IA</strong> e integrações. Entrego soluções escaláveis com foco em dados, performance e experiência, conectando plataformas como <strong>Supabase</strong>, <strong>Salesforce</strong> e <strong>TalkToMe</strong>.</p>
+          </article>
+          <article class="card">
+            <h3>Missão</h3>
+            <p>Construir automações confiáveis e orientadas a dados que eliminem tarefas repetitivas, integrem sistemas e gerem valor rápido com máxima clareza e manutenção simples.</p>
+          </article>
+          <article class="card">
+            <h3>Experiência</h3>
+            <ul>
+              <li>Workflows n8n com APIs e webhooks</li>
+              <li>Integrações com Supabase, Salesforce e TalkToMe</li>
+              <li>ETL e automações com Python</li>
+              <li>Monitoramento, logs e alertas</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section class="section" aria-labelledby="stack-title">
@@ -31,7 +60,7 @@
         <ul>
           <li>n8n, Webhooks, APIs REST</li>
           <li>Supabase (Auth, DB, Storage), PostgreSQL</li>
-          <li>Salesforce integrações</li>
+          <li>Integrações com Salesforce</li>
           <li>TalkToMe, automações de atendimento</li>
           <li>Python para ETL e automações</li>
           <li>HTML5, CSS3 (Flex/Grid), JavaScript (ES6+)</li>
